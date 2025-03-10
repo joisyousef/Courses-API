@@ -1,0 +1,27 @@
+{
+  "name": "session-one",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run:dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^13.1.0",
+    "express": "^4.21.2",
+    "express-validator": "^7.2.1",
+    "inquirer": "^12.4.2",
+    "lodash": "^4.17.21",
+    "mongodb": "^6.14.2",
+    "mongoose": "^8.12.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
