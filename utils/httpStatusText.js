@@ -1,5 +1,5 @@
 const SUCCESS = "Success";
-const FAIL = "Fails";
+const FAIL = "Fail";
 const ERROR = "Error";
 export default {
   SUCCESS,

@@ -2,8 +2,10 @@ import { validationResult } from "express-validator";
 import { Course } from "../models/course.model.js";
 import httpStatusText from "../utils/httpStatusText.js";
 const getAllCourses = async (req, res) => {
-  // Get all courses from the database
-  const courses = await Course.find({}, { __v: 0 });
+  const limit = 2;
+  const page = 1;
+
+  const courses = await Course.find({}, { __v: 0 }).limit(limit).skip(page);
 
   res.json({ status: httpStatusText.SUCCESS, data: { courses } });
 };
