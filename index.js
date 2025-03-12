@@ -25,9 +25,12 @@ app.all("*", (req, res, next) => {
 });
 // Glopal Middleware Error Handler
 app.use((error, req, res, next) => {
-  res
-    .status(500)
-    .json({ status: httpStatusText.ERROR, message: error.message });
+  res.status(500).json({
+    status: error.httpStatusText || httpStatusText.ERROR,
+    message: error.message,
+    code: error.statusCode || 500,
+    data: null,
+  });
 });
 app.listen(process.env.PORT, () => {
   console.log(`Server is running on http://localhost:${process.env.PORT}`);
