@@ -3,7 +3,7 @@ import { Course } from "../models/course.model.js";
 import httpStatusText from "../utils/httpStatusText.js";
 const getAllCourses = async (req, res) => {
   // Get all courses from the database
-  const courses = await Course.find();
+  const courses = await Course.find({}, { __v: 0 });
 
   res.json({ status: httpStatusText.SUCCESS, data: { courses } });
 };
