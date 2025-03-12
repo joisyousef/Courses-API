@@ -15,7 +15,9 @@ mongoose.connect(url).then(() => {
 });
 
 app.use("/api/courses", coursesRoute);
-
+app.all("*", (req, res, next) => {
+  res.status(404).json({ message: "Route not foudnd" });
+});
 app.listen(process.env.PORT, () => {
   console.log(`Server is running on http://localhost:${process.env.PORT}`);
 });
